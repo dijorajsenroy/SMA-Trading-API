@@ -13,7 +13,7 @@ def getGainers():
         l = str(link.get('href'))
         if '/quote/' in l and '%' not in l:
             stocks.append(l.split('?p=')[1])
-    return stocks[:10]
+    return stocks[:5] #### increase this to get more than the top 5 stocks
 
 # Function to check if the stock should be bought using Simple Moving Averages
 def shouldBuy(data):
