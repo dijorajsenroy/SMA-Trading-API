@@ -37,3 +37,6 @@ with open('results.json', 'w') as f:
 ```
 Hosted on Railway.app
 
+This is how it works!
+
+![Screenshot](screenshot.png)
