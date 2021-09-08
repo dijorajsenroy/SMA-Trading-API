@@ -10,7 +10,13 @@ app = flask.Flask(__name__)
 # Route to The API Page
 @app.route('/', methods=['GET'])
 def home():
-    render_template('display.html')
+    return '''<h1>Simple Moving Averages Trading API</h1><hr>
+<p>You will receive json data of top yahoo stocks to trade, and whether you should buy
+or sell them according to SMA Algorithm</p>'''
+
+
+@app.route('/api/', methods=['GET'])
+def api_all(): 
     return jsonify(getActions(stocks=getGainers()))
 
 # Execute app
