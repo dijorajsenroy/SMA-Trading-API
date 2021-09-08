@@ -10,14 +10,10 @@ def getGainers():
     soup = BeautifulSoup(response.text, 'html.parser')
     stocks = []
     for link in soup.findAll('a'):
-        l = link.get('href').split('/')
-        if l[1] == 'quote':
-            x = l[-1].split('?')[0]
-            if '%' in x:
-                pass
-            else:
-                stocks.append(x)
-    return stocks[:20]
+        l = str(link.get('href'))
+        if '/quote/' in l and '%' not in l:
+            stocks.append(l.split('?p=')[1])
+    return stocks[::2]
 
 # Function to check if the stock should be bought using Simple Moving Averages
 def shouldBuy(data):
