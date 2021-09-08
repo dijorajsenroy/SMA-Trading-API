@@ -29,12 +29,11 @@ python code:
 import requests
 import json
 
-url = ""
+url = "https://sma-trading-api.up.railway.app/api"
 r = requests.get(url)
 data = r.json()
 with open('results.json', 'w') as f:
     json.dump(data, f)
 ```
-
-the API is down right now, because it requires redis queues to handle code that takes more than 30 seconds to send response in heroku, however you can view the results in the file ```results.json``` Will migrate it to Railway.app and update soon!
+Hosted on Railway.app
 
